@@ -72,6 +72,7 @@ def main():
     args = argparser.parse_args()
 
     try:
+        file_timer_start = time.time()
         if StorageFile(args.input_file).exists():
             # pull all the unique chrom-pos-ref-alt from the TSV file
             logging.info(f"Getting unique list of chrom-pos-ref-alt from the input file")
@@ -124,6 +125,8 @@ def main():
             df.to_csv(args.output_file, sep='\t')
 
             logging.info(f"Processing complete!")
+            t = time.time() - file_timer_start
+            logging.info(f'File processing complete in {t:.3f} seconds.')
         else:
             logging.error("Input TSV file is not present! Alfa query failed.")
             raise "Script failed"
