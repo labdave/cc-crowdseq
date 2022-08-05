@@ -1,0 +1,6 @@
+env/
+.env
+*.yaml
+.vscode
+secrets/
+test/

@@ -1,0 +1,12 @@
+SQLAlchemy
+PyMySQL
+requests
+google-cloud-storage
+kubernetes
+python-dotenv
+google-api-python-client
+boto3
+numpy
+pandas
+Aries-storage
+pymongo
