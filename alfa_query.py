@@ -2,7 +2,7 @@ import json
 import logging
 import sys
 import argparse
-from time import time
+import time
 import pandas as pd
 from io import StringIO
 from Aries.storage import StorageFile
@@ -122,7 +122,7 @@ def main():
                             "ALFA_TOT": x['TOT']} for x in alfa_data]
             alfa_df = pd.DataFrame(temp)
             df = df.merge(alfa_df, how='left')
-            df.to_csv(args.output_file, sep='\t')
+            df.to_csv(args.output_file, sep='\t', index=False)
 
             logging.info(f"Processing complete!")
             t = time.time() - file_timer_start
