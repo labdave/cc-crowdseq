@@ -11,11 +11,11 @@ LABEL maintainer="lab.dave@gmail.com"
 LABEL description="Davelab scripts for CloudConductor and Crowdseq integration"
 
 # Install gcloud
-RUN curl -sSL https://sdk.cloud.google.com > /tmp/gcl &&\
-    bash /tmp/gcl --disable-prompts &&\
-    echo "if [ -f '/root/google-cloud-sdk/path.bash.inc' ]; then source '/root/google-cloud-sdk/path.bash.inc'; fi" >> /root/.bashrc &&\
-    echo "if [ -f '/root/google-cloud-sdk/completion.bash.inc' ]; then source '/root/google-cloud-sdk/completion.bash.inc'; fi" >> /root/.bashrc
-ENV PATH /root/google-cloud-sdk/bin:$PATH
+# RUN curl -sSL https://sdk.cloud.google.com > /tmp/gcl &&\
+#     bash /tmp/gcl --disable-prompts &&\
+#     echo "if [ -f '/root/google-cloud-sdk/path.bash.inc' ]; then source '/root/google-cloud-sdk/path.bash.inc'; fi" >> /root/.bashrc &&\
+#     echo "if [ -f '/root/google-cloud-sdk/completion.bash.inc' ]; then source '/root/google-cloud-sdk/completion.bash.inc'; fi" >> /root/.bashrc
+# ENV PATH /root/google-cloud-sdk/bin:$PATH
 
 COPY . /code
 WORKDIR /code

@@ -1,4 +1,4 @@
-from random import random
+import random
 
 
 def get_api_sleep(attempt):
